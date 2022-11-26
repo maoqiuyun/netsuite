@@ -35,7 +35,6 @@ module NetSuite
       field :partners_list, CustomerPartnersList
       field :subscriptions_list, CustomerSubscriptionsList
       field :sales_team_list, CustomerSalesTeamList
-      field :group_pricing_list, CustomerGroupPricingList
 
       read_only_fields :balance, :consol_balance, :deposit_balance, :consol_deposit_balance, :overdue_balance,
         :consol_overdue_balance, :unbilled_orders, :consol_unbilled_orders
