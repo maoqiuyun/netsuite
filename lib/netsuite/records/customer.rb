@@ -60,33 +60,5 @@ module NetSuite
         rec
       end
     end
-
-
-    class CustomerGroupPricing
-      include Support::Fields
-      include Support::RecordRefs
-      include Support::Records
-      include Namespaces::ListRel
-
-      record_refs :group, :level
-
-      def initialize(attributes_or_record = {})
-        case attributes_or_record
-        when Hash
-          initialize_from_attributes_hash(attributes_or_record)
-        when self.class
-          initialize_from_record(attributes_or_record)
-        end
-      end
-
-    end
-
-    class CustomerGroupPricingList < Support::Sublist
-
-      include Namespaces::ListRel
-      sublist :group_pricing, NetSuite::Records::CustomerGroupPricing
-
-    end
-
   end
 end
