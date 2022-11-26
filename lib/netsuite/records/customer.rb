@@ -17,7 +17,7 @@ module NetSuite
         :credit_limit, :date_created, :days_overdue, :default_address,
         :download_list, :email, :email_preference, :email_transactions, :end_date, :entity_id,
         :estimated_budget, :fax, :fax_transactions, :first_name, :first_visit, :give_access, :global_subscription_status,
-        :group_pricing_list, :home_phone, :image, :is_budget_approved, :is_inactive, :is_person, :item_pricing_list, :keywords,
+        :home_phone, :image, :is_budget_approved, :is_inactive, :is_person, :item_pricing_list, :keywords,
         :language, :last_modified_date, :last_name, :last_page_visited, :last_visit, :middle_name, :mobile_phone,
         :opening_balance, :opening_balance_account, :opening_balance_date,
         :password, :password2, :phone, :phonetic_name, :pref_cc_processor, :print_on_check_as,
@@ -35,6 +35,7 @@ module NetSuite
       field :partners_list, CustomerPartnersList
       field :subscriptions_list, CustomerSubscriptionsList
       field :sales_team_list, CustomerSalesTeamList
+      field :group_pricing_list, CustomerGroupPricingList
 
       read_only_fields :balance, :consol_balance, :deposit_balance, :consol_deposit_balance, :overdue_balance,
         :consol_overdue_balance, :unbilled_orders, :consol_unbilled_orders
@@ -59,5 +60,33 @@ module NetSuite
         rec
       end
     end
+
+
+    class CustomerGroupPricing
+      include Support::Fields
+      include Support::RecordRefs
+      include Support::Records
+      include Namespaces::ListRel
+
+      record_refs :group, :level
+
+      def initialize(attributes_or_record = {})
+        case attributes_or_record
+        when Hash
+          initialize_from_attributes_hash(attributes_or_record)
+        when self.class
+          initialize_from_record(attributes_or_record)
+        end
+      end
+
+    end
+
+    class CustomerGroupPricingList < Support::Sublist
+
+      include Namespaces::ListRel
+      sublist :group_pricing, NetSuite::Records::CustomerGroupPricing
+
+    end
+
   end
 end
