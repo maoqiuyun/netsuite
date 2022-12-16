@@ -17,7 +17,7 @@ module NetSuite
         :credit_limit, :date_created, :days_overdue, :default_address,
         :download_list, :email, :email_preference, :email_transactions, :end_date, :entity_id,
         :estimated_budget, :fax, :fax_transactions, :first_name, :first_visit, :give_access, :global_subscription_status,
-        :home_phone, :image, :is_budget_approved, :is_inactive, :is_person, :item_pricing_list, :keywords,
+        :home_phone, :image, :is_budget_approved, :is_inactive, :is_person, :keywords,
         :language, :last_modified_date, :last_name, :last_page_visited, :last_visit, :middle_name, :mobile_phone,
         :opening_balance, :opening_balance_account, :opening_balance_date,
         :password, :password2, :phone, :phonetic_name, :pref_cc_processor, :print_on_check_as,
