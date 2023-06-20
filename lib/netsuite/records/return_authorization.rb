@@ -67,7 +67,8 @@ module NetSuite
         :tran_is_vsoe_bundle,
         :valid_from,
         :vat_reg_num,
-        :vsoe_auto_calc
+        :vsoe_auto_calc,
+        :order_status
 
       record_refs :klass,
         :created_from,
@@ -86,7 +87,6 @@ module NetSuite
         :lead_source,
         :location,
         :message_sel,
-        :order_status,
         :partner,
         :payment_method,
         :promo_code,
