@@ -8,12 +8,10 @@ module NetSuite
       # internalId is a bit strange on this record
       # https://github.com/NetSweet/netsuite/wiki/Miscellaneous-Web-Services-Quirks#customer
 
-      fields :addr1, :addr2, :addr3, :addressee, :addr_phone, :attention, :city, :internal_id, :override, :state, :zip
+      fields :addr1, :addr2, :addr3, :addressee, :addr_phone, :attention, :city, :internal_id, :override, :state, :zip, :addr_text
 
       field :country, NetSuite::Support::Country
       field :custom_field_list, CustomFieldList
-
-      read_only_fields :addr_text
 
       def initialize(attributes_or_record = {})
         case attributes_or_record
