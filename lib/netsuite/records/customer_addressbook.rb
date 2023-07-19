@@ -10,12 +10,11 @@ module NetSuite
 
       # https://system.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2015_1/schema/other/customeraddressbook.html?mode=package
 
-      fields :default_shipping, :default_billing, :is_residential, :label, :internal_id
+      fields :default_shipping, :default_billing, :is_residential, :label, :internal_id, :addr_text
 
       # NOTE API < 2014_2
       fields :attention, :addressee, :phone, :addr1, :addr2, :addr3, :city, :zip, :override, :state
       field :country, NetSuite::Support::Country
-      read_only_fields :addr_text
 
       # NOTE API >= 2014_2
       field :addressbook_address, NetSuite::Records::Address
