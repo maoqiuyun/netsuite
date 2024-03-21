@@ -21,7 +21,7 @@ module NetSuite
         :language, :last_modified_date, :last_name, :last_page_visited, :last_visit, :middle_name, :mobile_phone,
         :opening_balance, :opening_balance_account, :opening_balance_date,
         :password, :password2, :phone, :phonetic_name, :pref_cc_processor, :print_on_check_as,
-        :print_transactions, :referrer, :reminder_days, :representing_subsidiary, :require_pwd_change, :resale_number,
+        :print_transactions, :referrer, :reminder_days, :require_pwd_change, :resale_number,
         :sales_group, :sales_readiness, :salutation, :send_email, :ship_complete,
         :stage, :start_date, :sync_partner_teams, :tax_exempt, :taxable,
         :third_party_acct, :third_party_country, :third_party_zipcode, :title, :url,
@@ -40,7 +40,8 @@ module NetSuite
         :consol_overdue_balance, :unbilled_orders, :consol_unbilled_orders
 
       record_refs :access_role, :custom_form, :currency, :entity_status, :partner, :category, :lead_source,
-        :price_level, :sales_rep, :subsidiary, :terms, :parent, :territory, :tax_item, :shipping_item, :receivables_account
+        :price_level, :sales_rep, :subsidiary, :terms, :parent, :territory, :tax_item, :shipping_item, :receivables_account,
+        :representing_subsidiary
 
       attr_reader   :internal_id
       attr_accessor :external_id
